@@ -4,8 +4,8 @@ __pycache__/
 *$py.class
 
 # For data files, you can download from source
-data/*
-!data/.gitkepp
+data/*.data
+data/*.names
 
 # C extensions
 *.so
