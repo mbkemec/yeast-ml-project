@@ -53,6 +53,6 @@ To use this project:
 | POX   | Peroxisomal                           | 20 |
 | ERL   | Endoplasmic reticulum lumen          | 5 |
 
-## Data Explore Visualization for Better Understanding
+## Data Explore & Visualization for Better Understanding
 
 ![Data Explore Visualization](data_explore_overview.png)
