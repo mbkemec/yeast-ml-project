@@ -3,11 +3,11 @@
 This project uses the **Yeast Protein Localization Dataset** from the UCI Machine Learning Repository.
 
 - Source: [UCI Yeast Dataset](https://archive.ics.uci.edu/dataset/110/yeast)
-- File: `yeast.data`
+- File: `yeast.data` , `yeast.names`
 - Description: 1,484 samples, 8 features, 10 classes.
 
 To use this project:
-1. Download `yeast.data` from the source
+1. Download data from the source
 2. Save it in the `data/` folder at this repository.
 
 ## Dataset Overview
@@ -15,7 +15,7 @@ To use this project:
 - **Number of features**: 8 numerical
 - **Number of classes**: 10 localization sites
 - **Missing values**: None
-- **License**: Original dataset is not included in this repository. Please download it directly from UCI.
+- **Source**: Original dataset is not included in this repository. Please download it directly from UCI.
 
 ### Data Structure
 
@@ -38,7 +38,7 @@ To use this project:
 | `vac`  | Vacuolar vs extracellular discriminant score |
 | `nuc`  | Nuclear localization signal discriminant score |
 
-##Class Distribution
+## Class Distribution
 
 | Class | Description                                | Count |
 |-------|---------------------------------------------|-------|
@@ -52,3 +52,7 @@ To use this project:
 | VAC   | Vacuolar                               | 30 |
 | POX   | Peroxisomal                           | 20 |
 | ERL   | Endoplasmic reticulum lumen          | 5 |
+
+## Data Explore Visualization for Better Understanding
+
+![Data Explore Visualization](data_explore_overview.png)
