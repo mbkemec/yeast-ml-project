@@ -21,7 +21,7 @@ To use this project:
 
 | Column Type       | Count | Description |
 |-------------------|-------|-------------|
-| Sequence Name     | 1     | Protein ID (SWISS-PROT accession) — not used for modeling |
+| Sequence Name     | 1     | Protein ID (SWISS-PROT accession) |
 | Numerical Features| 8     | mcg, gvh, alm, mit, erl, pox, vac, nuc |
 | Class Label       | 1     | Protein localization site (10 classes) |
 
@@ -56,3 +56,14 @@ To use this project:
 ## Data Explore & Visualization for Better Understanding
 
 ![Data Explore Visualization](data_explore_overview.png)
+
+The figure above provides an overview of the `yeast dataset` through three key exploratory analyses:
+1. Class Distribution
+- The dataset is highly imbalanced: `CYT` and `NUC` are the dominant classes, while classes like `POC` and `ERL` have only few samples.
+- This imbalance can effect the model performance, should be taken into consideration at the model creation stage.
+2. Feature Correlation
+- Most features show low correlations, so they are independent.
+- Only pay attention the correlation is between `mcg` and `gvh`, which is `0.58`.
+3. PCA
+- The PCA plot shows that classes are not clearly separable, this suggests that the data is not linearly separable. However it also shows that some classes can differ in certain directions.
+
