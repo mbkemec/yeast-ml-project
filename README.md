@@ -1,5 +1,7 @@
 # Yeast Protein Localization -- Applied Machine Learning Project
 
+- **Goal**: Build and evaluate a machine learning model that can predict the cellular localization site of a yeast protein based on features.
+
 This project uses the **Yeast Protein Localization Dataset** from the UCI Machine Learning Repository.
 
 - Source: [UCI Yeast Dataset](https://archive.ics.uci.edu/dataset/110/yeast)
