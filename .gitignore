@@ -6,7 +6,7 @@ __pycache__/
 # For data files, you can download from source
 data/*.data
 data/*.names
-data/yeast_folds.csv
+data/yeast_folds.tsv
 data/*.zip
 data/*.tar.gz
 

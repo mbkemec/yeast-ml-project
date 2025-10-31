@@ -79,8 +79,8 @@ By applying a class aware splitting strategy, every class — including the rare
 This ensures a fair evaluation and prevents small classes from being excluded during either training or testing.
 
 The final files created are:
-- `yeast_folds.csv` → full split version with original data (for local use)
-- `fold_index.csv` → the shareable version (contains only `seq_name` and `fold`)
+- `yeast_folds.tsv` → full split version with original data (for local use)
+- `fold_index.tsv` → the shareable version (contains only `seq_name` and `fold`)
 
 #### Sample size per fold
 

@@ -6,7 +6,7 @@
 # That's why i dont want to miss the small class in the both training and benchmark dataset.
 # So, i split the data with certain rules in all folds and protect the class distribution ratio.
 """
-#!/usr/bin/env python3
+
 import pandas as pd
 
 cols = ["seq_name","mcg","gvh","alm","mit","erl","pox","vac","nuc","class"]
@@ -35,8 +35,8 @@ for cls in df["class"].unique():
         # So we can sure every fold contains every class!!
 
 
-df.to_csv("../data/yeast_folds.csv", index=False)
-df[["seq_name","fold"]].to_csv("../data/fold_index.csv", index=False)
+df.to_csv("../data/yeast_folds.tsv", sep="\t", index=False)
+df[["seq_name","fold"]].to_csv("../data/fold_index.tsv", sep="\t", index=False)
 
 print("Splitting completed and files saved!(the final file is: yeast_folds.csv)(the sharable version is: fold_index.csv)")
 print("You can see the sample size for each fold:")
