@@ -75,7 +75,7 @@ In this step, the dataset was divided into a **75% training set** and a **25% be
 The training portion was further split into **three cross-validation folds** to enable reliable model evaluation.  
 
 This approach was chosen because the dataset is relatively small and highly imbalanced.  
-By applying a class-aware round-robin splitting strategy, every class — including the rare ones — is represented in all folds and in the benchmark set.  
+By applying a class aware splitting strategy, every class — including the rare ones — is represented in all folds and in the benchmark set.  
 This ensures a fair evaluation and prevents small classes from being excluded during either training or testing.
 
 The final files created are:
