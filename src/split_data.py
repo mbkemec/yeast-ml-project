@@ -38,7 +38,7 @@ for cls in df["class"].unique():
 df.to_csv("../data/yeast_folds.tsv", sep="\t", index=False)
 df[["seq_name","fold"]].to_csv("../data/fold_index.tsv", sep="\t", index=False)
 
-print("Splitting completed and files saved!(the final file is: yeast_folds.csv)(the sharable version is: fold_index.csv)")
+print("Splitting completed and files saved!(the final file is: yeast_folds.tsv)(the sharable version is: fold_index.tsv)")
 print("You can see the sample size for each fold:")
 print(df["fold"].value_counts().sort_index())
 print()
