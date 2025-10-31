@@ -69,3 +69,36 @@ The figure above provides an overview of the `yeast dataset` through three key e
 3. PCA
 - The PCA plot shows that classes are not clearly separable, this suggests that the data is not linearly separable. However it also shows that some classes can differ in certain directions.
 
+## Data Splitting and Management
+
+In this step, the dataset was divided into a **75% training set** and a **25% benchmark test set**.  
+The training portion was further split into **three cross-validation folds** to enable reliable model evaluation.  
+
+This approach was chosen because the dataset is relatively small and highly imbalanced.  
+By applying a class-aware round-robin splitting strategy, every class — including the rare ones — is represented in all folds and in the benchmark set.  
+This ensures a fair evaluation and prevents small classes from being excluded during either training or testing.
+
+The final files created are:
+- `yeast_folds.csv` → full split version with original data (for local use)
+- `fold_index.csv` → the shareable version (contains only `seq_name` and `fold`)
+
+#### Sample size per fold
+
+| Fold | Sample Count |
+|:----:|:-------------:|
+| -1 (Benchmark) | 374 |
+| 0 | 372 |
+| 1 | 371 |
+| 2 | 367 |
+
+#### Class distribution across folds
+
+| Fold | CYT | ERL | EXC | ME1 | ME2 | ME3 | MIT | NUC | POX | VAC |
+|:----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|
+| -1 | 116 | 2 | 9 | 11 | 13 | 41 | 61 | 108 | 5 | 8 |
+| 0 | 116 | 1 | 9 | 11 | 13 | 41 | 61 | 107 | 5 | 8 |
+| 1 | 116 | 1 | 9 | 11 | 13 | 41 | 61 | 107 | 5 | 7 |
+| 2 | 115 | 1 | 8 | 11 | 12 | 40 | 61 | 107 | 5 | 7 |
+
+As seen above, all ten classes are present in every fold, including the smallest one (`ERL`, with only 5 samples).
+This guarantees that the dataset remains balanced and consistent across all training and evaluation phases.
