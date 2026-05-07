@@ -12,6 +12,22 @@ To use this project:
 1. Download data from the source
 2. Save it in the `data/` folder at this repository.
 
+## Project Workflow
+
+This project follows a complete machine learning workflow for multi-class protein localization prediction, including:
+
+- exploratory data analysis,
+- feature selection,
+- resampling techniques,
+- model evaluation,
+- algorithm comparison,
+- hyperparameter optimization,
+- and final benchmark evaluation.
+
+The complete analysis, visualizations, model development process, and final results are available in the Jupyter notebook:
+
+- `yeast_protein_localization_ml.ipynb`
+
 ## Dataset Overview
 - **Number of instances**: 1,484
 - **Number of features**: 8 numerical
@@ -61,7 +77,7 @@ To use this project:
 
 The figure above provides an overview of the `yeast dataset` through three key exploratory analyses:
 1. Class Distribution
-- The dataset is highly imbalanced: `CYT` and `NUC` are the dominant classes, while classes like `POC` and `ERL` have only few samples.
+- The dataset is highly imbalanced: `CYT` and `NUC` are the dominant classes, while classes like `POX` and `ERL` have only few samples.
 - This imbalance can effect the model performance, should be taken into consideration at the model creation stage.
 2. Feature Correlation
 - Most features show low correlations, so they are independent.
@@ -102,3 +118,35 @@ The final files created are:
 
 As seen above, all ten classes are present in every fold, including the smallest one (`ERL`, with only 5 samples).
 This guarantees that the dataset remains balanced and consistent across all training and evaluation phases.
+
+## Final Results
+
+Several machine learning algorithms were evaluated on the Yeast dataset, including:
+
+- Logistic Regression
+- K-Nearest Neighbors (KNN)
+- Decision Tree (CART)
+- Naive Bayes
+- Support Vector Machine (SVM)
+- Random Forest
+- ExtraTrees
+
+Among all tested approaches, the tuned Random Forest model achieved the best overall performance.
+
+### Final Benchmark Performance
+
+| Metric | Value |
+|--------|------|
+| Accuracy | ~62% |
+| MCC | ~0.51 |
+
+Key observations:
+
+- Tree-based ensemble models outperformed linear models.
+- Nonlinear methods handled the dataset structure more effectively.
+- Minority classes such as `POX` and `ME1` were predicted more successfully after hyperparameter tuning.
+- Some classes such as `VAC` remained difficult due to biological overlap and class imbalance.
+
+The final model and label encoder are also saved for reuse:
+- `models/final_random_forest_model.pkl`
+- `models/label_encoder.pkl`
