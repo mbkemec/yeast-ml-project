@@ -5,6 +5,7 @@
 This project uses the **Yeast Protein Localization Dataset** from the UCI Machine Learning Repository.
 
 - Source: [UCI Yeast Dataset](https://archive.ics.uci.edu/dataset/110/yeast)
+- Reference: Nakai, K. (1991). *Yeast* [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5KG68
 - File: `yeast.data` , `yeast.names`
 - Description: 1,484 samples, 8 features, 10 classes.
 
@@ -26,7 +27,7 @@ This project follows a complete machine learning workflow for multi-class protei
 
 The complete analysis, visualizations, model development process, and final results are available in the Jupyter notebook:
 
-- `yeast_protein_localization_ml.ipynb`
+- [yeast_protein_localization_ml.ipynb](yeast_protein_localization_ml.ipynb)
 
 ## Dataset Overview
 - **Number of instances**: 1,484
@@ -133,19 +134,22 @@ Several machine learning algorithms were evaluated on the Yeast dataset, includi
 
 Among all tested approaches, the tuned Random Forest model achieved the best overall performance.
 
-### Final Benchmark Performance
+## Final Benchmark Performance
 
 | Metric | Value |
 |--------|------|
 | Accuracy | ~62% |
 | MCC | ~0.51 |
+| Macro Avg F1-score | ~0.62 |
+| Weighted Avg F1-score | ~0.61 |
 
-Key observations:
+### Additional Evaluation Highlights
 
 - Tree-based ensemble models outperformed linear models.
-- Nonlinear methods handled the dataset structure more effectively.
-- Minority classes such as `POX` and `ME1` were predicted more successfully after hyperparameter tuning.
-- Some classes such as `VAC` remained difficult due to biological overlap and class imbalance.
+- Random Forest achieved the best overall balance between majority and minority classes.
+- Minority classes such as `ME1`, `EXC`, and `POX` became more recognizable after tuning.
+- `VAC` remained difficult to classify due to feature overlap and limited samples.
+- MCC was included because it provides a more balanced evaluation for imbalanced multi-class classification problems.
 
 The final model and label encoder are also saved for reuse:
 - `models/final_random_forest_model.pkl`
